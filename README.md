@@ -1,5 +1,5 @@
 # Dietpi
-Scriptini che automatizzano il dietpi
+SCRIPTINI CHE AUTOMATIZZANO IL DIETPI:
 
 agg << Aggiorna Diet Pi & Pi Hole
 
