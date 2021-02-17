@@ -1,0 +1,38 @@
+#!/bin/bash
+
+cd /mnt/usb
+rm *.torrent
+rm -r lost+found
+find -name "* *" -print0 | sort -rz | \
+  while read -d $'\0' f; do mv -v "$f" "$(dirname "$f")/$(basename "${f// /_}")"; done
+
+ls > lista.txt
+
+for i in {1..25}
+do
+
+tr=$(sed -n "$i"p lista.txt);
+
+echo $tr
+
+if [[ $tr == "" ]]; then
+        break
+else
+
+cp -r ./$tr ../beli;
+
+fi
+
+done
+
+rm -r *
+
+rm lista.txt
+
+cd /mnt/beli
+
+rm *.torrent
+rm lista.txt
+
+exit
+

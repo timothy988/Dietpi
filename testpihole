@@ -1,0 +1,67 @@
+#!/bin/bash
+#VARIABILI PER TEST
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
+
+
+#INIZIO TEST
+echo ""
+tput setaf 4; tput setab 7;tput bold; echo "TEST PER VERIFICARE IL CORETTO FUNZIONAMENTO"
+
+echo "${reset}"
+
+#CREO FILE PER TEST
+touch primo.txt
+touch secondo.txt
+touch primotest.txt
+touch secondotest.txt
+
+#TEST PIHOLE
+dig sigfail.verteiltesysteme.net @127.0.0.1 -p 5353 > primo.txt
+dig sigok.verteiltesysteme.net @127.0.0.1 -p 5353 > secondo.txt
+
+
+grep SERVFAIL primo.txt > primotest.txt
+grep NOERROR secondo.txt > secondotest.txt
+pri="./primotest.txt"
+sec="./secondotest.txt"
+test1=$(cat "$pri")
+test2=$(cat "$sec")
+
+tput setaf 4; tput setab 7;tput bold;  echo "ESEGUO DUE TEST DI UNBOUND"
+echo "${reset}"
+
+#RISULTATO FINALE
+case $test1  in
+        *SERVFAIL*)
+                        echo "PRIMO TEST:       ${green}RIUSCITO${reset}";;
+        *)
+                        echo "PRIMO TEST:       ${red}NON RIUSCITO${reset}";;
+
+esac
+
+case $test2  in
+        *NOERROR*)
+                        echo "SECONDO TEST:     ${green}RIUSCITO${reset}";;
+        *)
+                        echo "SECONDO TEST:     ${red}NON RIUSCITO${reset}";;
+esac
+
+echo ""
+tput setaf 4; tput setab 7;tput bold; echo "PIHOLE STATUS: "
+echo "${reset}"
+echo ""
+pihole -v
+echo ""
+pihole status
+echo ""
+
+#ELIMINO FILE PER TEST
+rm primo.txt
+rm secondo.txt
+rm primotest.txt
+rm secondotest.txt
+
+exit

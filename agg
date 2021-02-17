@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#INIZIO AGGIORNAMENTO SISTEMA
+sudo apt-get update && sudo apt-get upgrade --yes
+sudo apt-get autoremove --yes
+sudo apt-get -y dist-upgrade
+sudo apt-get clean
+#FINE AGGIORNAMENTO SISTEMA
+
+echo "Ho appena finito di fare gli aggiornamenti"
+
+#INIZO AGGIORNAMENTO PIHOLE
+
+sudo pihole -up
+echo "Ho appen aggiornato pi hole"
+
+
+sudo pihole restartdns
+echo "Ho appen fatto restartdns"
+
+#FINE AGGIORNMENTO PIHOLE
+exit
+
