@@ -19,8 +19,8 @@ touch primotest.txt
 touch secondotest.txt
 
 #TEST PIHOLE
-dig sigfail.verteiltesysteme.net @127.0.0.1 -p 5353 > primo.txt
-dig sigok.verteiltesysteme.net @127.0.0.1 -p 5353 > secondo.txt
+dig sigfail.verteiltesysteme.net @127.0.0.1 -p 5335 > primo.txt
+dig sigok.verteiltesysteme.net @127.0.0.1 -p 5335 > secondo.txt
 
 
 grep SERVFAIL primo.txt > primotest.txt
