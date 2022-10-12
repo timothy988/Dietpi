@@ -1,10 +1,16 @@
 #!/bin/bash
 cd /etc/cron.daily/
+rm mmotti agg pi
+echo "curl -sSl https://raw.githubusercontent.com/mmotti/pihole-regex/master/install.py | sudo python3" > mmotti
 wget https://raw.githubusercontent.com/timothy988/Dietpi/main/agg
 wget https://raw.githubusercontent.com/timothy988/Dietpi/main/pi
+chmod +x mmotti
+chmod +x agg
+chmod +x pi
 cd /etc
 rm pihole-updatelists.conf
 wget https://raw.githubusercontent.com/timothy988/Dietpi/main/pihole-updatelists.conf
 cd /root
-wget https://raw.githubusercontent.com/timothy988/Dietpi/main/testpihole
+rm testpihole
+wget https://raw.githubusercontent.com/timothy988/Dietpi/main/testpiholechmod +x testpihole
 exit
