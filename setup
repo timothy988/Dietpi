@@ -1,0 +1,10 @@
+#!/bin/bash
+ cd /etc/cron.daily/
+ wget https://raw.githubusercontent.com/timothy988/Dietpi/main/agg
+ wget https://raw.githubusercontent.com/timothy988/Dietpi/main/pi
+ cd /etc
+ rm pihole-updatelists.conf
+ wget https://raw.githubusercontent.com/timothy988/Dietpi/main/pihole-updatelists.conf
+ cd /root
+ wget https://raw.githubusercontent.com/timothy988/Dietpi/main/testpihole
+exit
