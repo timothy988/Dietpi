@@ -1,4 +1,4 @@
-# Advertising and Tracking
+# Existing Patterns
 ^ad([sxv]?[0-9]*|system)[_.-]([^.[:space:]]+\.){1,}|[_.-]ad([sxv]?[0-9]*|system)[_.-]
 ^(.+[_.-])?adse?rv(er?|ice)?s?[0-9]*[_.-]
 ^(.+[_.-])?telemetry[_.-]
@@ -15,43 +15,11 @@
 ^stat(s|istics)?[0-9]*[_.-]
 
 # Enhanced Telemetry Blocking Patterns
-^telemetry\.[^.]+$
-^tracking\.[^.]+$
-^metrics\.[^.]+$
-^(.+\.)?telemetry[_.-]
-^(.+\.)?tracking[_.-]
-^(.+\.)?metrics[_.-]
-^(.+\.)?log[_.-]
-^(.+\.)?stats[_.-]
-^(.+\.)?stat[_.-]
-^(.+\.)?analytic[_.-]
-^(.+\.)?data[_.-]
-^(.+\.)?monitor[_.-]
-^(.+\.)?trck[_.-]
-^(.+\.)?trk[_.-]
-^(.+\.)?event[_.-]
-^(.+\.)?ping[_.-]
-^(.+\.)?collect[_.-]
-
-# Specific Services and Platforms
+^(.+\.)?(telemetry|tracking|metrics)\..+$
 ^(.+\.)?((ms|microsoft|windows|office|outlook)\.(com|net|org|io)|live\.com)$
 ^(.+\.)?(analytics|doubleclick|google-analytics|tagmanager)\.(com|net|org)$
 ^(.+\.)?(apple|icloud|itunes|me|mac)\.(com|net|org)$
 ^(.+\.)?(facebook|fb|fbcdn)\.(com|net|org)$
 ^(.+\.)?(amazon|aws|cloudfront|prime)\.(com|net|org)$
 ^(.+\.)?(adobe|adobelogin|omtrdc)\.(com|net|org)$
-^(.+\.)?(akamai|edgekey|edgesuite|akadns)\.(net|com|org)$
-^(.+\.)?(app-measurement|firebase|firebaseio|appspot)\.(com|net|org)$
-^(.+\.)?(atdmt|atlas|adnxs|adroll|adsrvr|adtech|advertising|doubleverify)\.(com|net|org)$
-^(.+\.)?(bluekai|bkrtx|bttrack|bkcoretag|krxd|kochava)\.(com|net|org)$
-^(.+\.)?(chartbeat|crazyegg|quantserve|quantcount|scorecardresearch|statcounter|fullstory)\.(com|net|org)$
-^(.+\.)?(demdex|dpm|everesttech|omtrdc)\.(net|com|org)$
-^(.+\.)?(flurry|flurryanalytics|yahoo|inmobi|tapad|mediamath|moat)\.(com|net|org)$
-^(.+\.)?(heatmap|hotjar|inspectlet|luckyorange|clicktale|decibelinsight)\.(com|net|org)$
-^(.+\.)?(mixpanel|heap|segment|keen|snowplow|intercom)\.(com|net|org)$
-^(.+\.)?(newrelic|nr-data|insight|datadog|appdynamics|loggly|logentries)\.(com|net|org)$
-^(.+\.)?(piwik|matomo|goatcounter|simpleanalytics|fathom|plausible)\.(com|net|org)$
-^(.+\.)?(quantserve|scorecardresearch|pippio|rubiconproject|pubmatic|openx)\.(com|net|org)$
-^(.+\.)?(taplytics|leanplum|braze|onesignal|urbanairship|batch)\.(com|net|org)$
-^(.+\.)?(yandex|metrica|mail|cloud|rbk|megogo|odnoklassniki)\.(com|net|org)$
-^(.+\.)?(cdn|api|connect|events|logs|metrics|telemetry|monitoring|tracking|analytics)\..+$
+^(.+\.)?(track|trck|trk|stat|stats|analytics|pixel|log)\..+$
